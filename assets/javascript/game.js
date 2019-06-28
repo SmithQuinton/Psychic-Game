@@ -17,6 +17,7 @@ var letterGuessed = document.getElementById("letters-guessed");
 
 
 
+
             // FUNCTIONS
 compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(compGuess);
@@ -46,6 +47,17 @@ document.onkeyup = function (event) {
         chancesLeft - 1;
         console.log(chancesLeft--);
         guessesLeft.textContent = "Guesses Left: " + chancesLeft;
+        if (chancesLeft === 0) {
+            alert("You Lose. What Letter am I thinking of Now?")
+            lose++;
+            lossTotal.textContent = "Losses: " + lose;
+            guessed = [];
+            chancesLeft = 9;
+            compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(compGuess);
+            
+
+        }
         
         
             
