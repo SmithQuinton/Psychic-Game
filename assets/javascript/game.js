@@ -26,7 +26,7 @@ document.onkeyup = function (event) {
 
     if (event.key.toLowerCase() == compGuess) {
         console.log("You Guessed " + event.key + " - Correct");
-        guessed = [],
+        guessed = [""],
         letterGuessed.textContent = "Your Guesses So Far: " + guessed;
         win++;
         winTotal.textContent = "Wins: " + win;
@@ -41,10 +41,11 @@ document.onkeyup = function (event) {
     else {
         console.log("You Guessed " + event.key + " - Incorrect, Try Again");
         chancesLeft--;
+        letterGuessed.textContent = "Guesses Left: " + guessed;
         
 
     }
 
-    guessed.push(event.key);
-    console.log(guessed);
+     guessed.push(event.key);
+     console.log(guessed);
 }
