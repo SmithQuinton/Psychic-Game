@@ -27,9 +27,11 @@ document.onkeyup = function (event) {
 
     if (event.key.toLowerCase() == compGuess) {
         console.log("You Guessed " + event.key + " - Correct");
+        alert("You Guessed " + event.key + " - Correct. If you're really psychic, you can guess what letter I'm thinking of now.")
         guessed = [];
         // letterGuessed.textContent = "Your Guesses So Far: " + guessed;
         win++;
+        chancesLeft = 9;
         winTotal.textContent = "Wins: " + win;
         console.log("You have " + win + " wins");
         compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
